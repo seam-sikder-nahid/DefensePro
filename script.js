@@ -99,7 +99,7 @@ function validateForm(formId) {
 
         // Phone validation
         if (field.name === 'phone') {
-            const phoneRegex = /^[0-9]{10}$/;
+            const phoneRegex = /^[0-9]{11}$/;
             if (!phoneRegex.test(field.value)) {
                 field.classList.add('error');
                 isValid = false;
