@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DefensePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-icon">🛡️</span>
+                    DefensePro
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="ebooks.html" class="nav-link">E-Books</a></li>
+                <li class="nav-item"><a href="circular.html" class="nav-link">Circulars</a></li>
+                <li class="nav-item"><a href="apply.html" class="nav-link">Apply</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link active">FAQ</a></li>
+                <li class="nav-item"><a href="mock-test.html" class="nav-link">Mock Test</a></li>
+                <li class="nav-item"><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                <li class="nav-item"><a href="free-course.html" class="nav-link nav-link-cta">Free Course</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our courses and services</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <!-- General Section -->
+            <div class="faq-section">
+                <h2>General Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What is DefensePro?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>DefensePro is a comprehensive online platform dedicated to defense officer recruitment preparation. We provide courses, mock tests, study materials, and personalized guidance to help aspirants succeed in Army, Navy, and Air Force recruitment exams.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Who can use DefensePro?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Any Indian citizen aged 18-28 years (varies by service) with 12th pass or higher qualification can use DefensePro. Our courses are designed for NDA aspirants, CDS candidates, and officer recruitment exam takers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How long do I have access to the courses?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All our courses come with lifetime access. Once you enroll, you can access the course materials indefinitely, including any future updates or additional resources we add.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Section -->
+            <div class="faq-section">
+                <h2>Course Information</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What courses do you offer?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer specialized courses for Army Officer (NDA/CDS), Navy Officer Entry, Air Force Officer Selection, General Knowledge Masterclass, Physical Fitness Training, and SSB & Interview Preparation. Each course is designed by defense experts.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How much do the courses cost?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Course prices vary from ₹1,999 to ₹4,999 depending on the course duration and content. We offer monthly discounts and seasonal offers. Physical Fitness Training is completely free. Check our courses page for detailed pricing.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Is there a free trial or demo?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer a completely free course "Physical Fitness Training" to all users. Additionally, you can preview course content and testimonials before enrolling. We also offer a money-back guarantee if you're not satisfied.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Can I download course materials?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all PDF notes, e-books, and study guides can be downloaded for offline access. Videos can be streamed online. This ensures you can study anywhere, anytime, even without internet connection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recruitment Section -->
+            <div class="faq-section">
+                <h2>Recruitment & Eligibility</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What is the eligibility for defense officer recruitment?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Basic eligibility includes: Indian citizenship, age 20-24 years (varies by service), 12th pass or bachelor's degree, physical and medical fitness, and no criminal record. Each service has specific requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What are the selection stages?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The typical selection process includes: Written Exam → Physical Fitness Test → Medical Examination → SSB Interview → Document verification. Our courses cover preparation for all these stages.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How often are recruitment notifications released?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Defense recruitment notifications vary. NDA/CDS exams are typically conducted 2-3 times a year. Navy and Air Force have regular recruitment cycles. We update our circulars section as soon as notifications are released.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mock Test Section -->
+            <div class="faq-section">
+                <h2>Mock Tests</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How many mock tests are available?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We provide unlimited access to mock tests covering General Knowledge, Current Affairs, History, Mathematics, and English. Each test has 10-100 questions depending on the type. New tests are added regularly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Are the mock tests similar to actual exams?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our mock tests are designed exactly like actual NDA, CDS, and other defense recruitment exams. They follow the same format, difficulty level, and time constraints as the real exams.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How are scores calculated?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Scores are calculated based on correct answers. You receive instant feedback with detailed explanations for each answer. Your performance metrics track improvement over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment & Support Section -->
+            <div class="faq-section">
+                <h2>Payment & Support</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>What payment methods do you accept?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept all major payment methods including Credit Cards, Debit Cards, UPI, Net Banking, and Wallets. All transactions are secure and encrypted.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Is there a refund policy?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a 30-day money-back guarantee. If you're not satisfied with a course, request a refund within 30 days of purchase with no questions asked.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>How can I contact support?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can reach our support team via Email: info@defensepro.com, Phone: +91 9876 543 210, or through the contact form on our website. We respond within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>Do you offer doubt resolution?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! All course students get access to our doubt resolution forum. You can ask questions anytime and our expert instructors will provide detailed explanations within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>DefensePro</h4>
+                    <p>Your trusted partner in military career preparation</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="mock-test.html">Mock Tests</a></li>
+                        <li><a href="circular.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="ebooks.html">E-Books</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@defensepro.com</p>
+                    <p>Phone: +91 9876 543 210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DefensePro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .main-section {
+            padding: 60px 20px;
+            background: #f8fafc;
+        }
+
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-section h2 {
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.05rem;
+            text-align: left;
+            color: var(--dark-color);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: #f8fafc;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 20px;
+            margin: 20px 0 0 0;
+            color: var(--gray-color);
+        }
+
+        @media (max-width: 768px) {
+            .main-section {
+                padding: 40px 20px;
+            }
+
+            .faq-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .faq-question {
+                padding: 15px 20px;
+            }
+
+            .faq-question h3 {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</body>
+</html>

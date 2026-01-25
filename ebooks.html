@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Books - DefensePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-icon">🛡️</span>
+                    DefensePro
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="ebooks.html" class="nav-link active">E-Books</a></li>
+                <li class="nav-item"><a href="circular.html" class="nav-link">Circulars</a></li>
+                <li class="nav-item"><a href="apply.html" class="nav-link">Apply</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="mock-test.html" class="nav-link">Mock Test</a></li>
+                <li class="nav-item"><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                <li class="nav-item"><a href="free-course.html" class="nav-link nav-link-cta">Free Course</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>E-Books & Study Materials</h1>
+            <p>Download comprehensive study guides for your defense preparation</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search e-books..." class="search-box">
+                <div class="filter-group">
+                    <button class="filter-btn active" onclick="filterBooks('all')">All</button>
+                    <button class="filter-btn" onclick="filterBooks('gk')">GK</button>
+                    <button class="filter-btn" onclick="filterBooks('current')">Current Affairs</button>
+                    <button class="filter-btn" onclick="filterBooks('history')">History</button>
+                    <button class="filter-btn" onclick="filterBooks('science')">Science</button>
+                </div>
+            </div>
+
+            <!-- E-Books Grid -->
+            <div class="ebooks-grid">
+                <!-- Book 1 -->
+                <div class="ebook-card" data-category="gk">
+                    <div class="ebook-icon">📚</div>
+                    <h3>General Knowledge Handbook</h3>
+                    <p class="category-badge">General Knowledge</p>
+                    <p class="ebook-desc">Comprehensive GK guide covering geography, economics, and important facts.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 150 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="ebook-card" data-category="current">
+                    <div class="ebook-icon">📰</div>
+                    <h3>Current Affairs 2024</h3>
+                    <p class="category-badge">Current Affairs</p>
+                    <p class="ebook-desc">Latest current affairs, important events, and national/international updates.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 200 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="ebook-card" data-category="history">
+                    <div class="ebook-icon">🏛️</div>
+                    <h3>Indian History Guide</h3>
+                    <p class="category-badge">History</p>
+                    <p class="ebook-desc">Complete Indian history from ancient to modern times with important dates.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 180 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="ebook-card" data-category="gk">
+                    <div class="ebook-icon">🌍</div>
+                    <h3>World Geography Notes</h3>
+                    <p class="category-badge">General Knowledge</p>
+                    <p class="ebook-desc">World geography, continents, countries, capitals, and geographical features.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 120 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="ebook-card" data-category="science">
+                    <div class="ebook-icon">🔬</div>
+                    <h3>Science & Technology</h3>
+                    <p class="category-badge">Science</p>
+                    <p class="ebook-desc">Physics, Chemistry, Biology, and modern technology concepts explained.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 160 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="ebook-card" data-category="current">
+                    <div class="ebook-icon">🎯</div>
+                    <h3>Defense Policy & Strategy</h3>
+                    <p class="category-badge">Current Affairs</p>
+                    <p class="ebook-desc">India's defense policies, military operations, and strategic initiatives.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 130 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="ebook-card" data-category="history">
+                    <div class="ebook-icon">⚔️</div>
+                    <h3>Military History</h3>
+                    <p class="category-badge">History</p>
+                    <p class="ebook-desc">Indian military history, wars, and important military commanders.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 140 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="ebook-card" data-category="gk">
+                    <div class="ebook-icon">⚖️</div>
+                    <h3>Indian Constitution & Law</h3>
+                    <p class="category-badge">General Knowledge</p>
+                    <p class="ebook-desc">Indian Constitution, fundamental rights, articles, and important laws.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 170 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="ebook-card" data-category="science">
+                    <div class="ebook-icon">🛰️</div>
+                    <h3>Space & Aviation</h3>
+                    <p class="category-badge">Science</p>
+                    <p class="ebook-desc">ISRO, space programs, aviation technology, and aerospace concepts.</p>
+                    <div class="ebook-meta">
+                        <span>📄 PDF</span>
+                        <span>📊 110 pages</span>
+                    </div>
+                    <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>DefensePro</h4>
+                    <p>Your trusted partner in military career preparation</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="mock-test.html">Mock Tests</a></li>
+                        <li><a href="circular.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="ebooks.html">E-Books</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@defensepro.com</p>
+                    <p>Phone: +91 9876 543 210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DefensePro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .main-section {
+            padding: 60px 20px;
+        }
+
+        .search-filter {
+            margin-bottom: 50px;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--dark-color);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .ebooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .ebook-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .ebook-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .ebook-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .ebook-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .ebook-desc {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .ebook-meta {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+
+        .ebook-card .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .main-section {
+                padding: 40px 20px;
+            }
+
+            .ebooks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-group {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        function filterBooks(category) {
+            const cards = document.querySelectorAll('.ebook-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.3s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function handleDownload(e) {
+            e.preventDefault();
+            alert('Download started! In a real application, this would download the PDF file.');
+        }
+    </script>
+</body>
+</html>

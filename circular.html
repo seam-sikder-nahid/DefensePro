@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulars - DefensePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-icon">🛡️</span>
+                    DefensePro
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="ebooks.html" class="nav-link">E-Books</a></li>
+                <li class="nav-item"><a href="circular.html" class="nav-link active">Circulars</a></li>
+                <li class="nav-item"><a href="apply.html" class="nav-link">Apply</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="mock-test.html" class="nav-link">Mock Test</a></li>
+                <li class="nav-item"><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                <li class="nav-item"><a href="free-course.html" class="nav-link nav-link-cta">Free Course</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Recruitment Circulars</h1>
+            <p>Latest updates on defense recruitment notifications</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search circulars..." class="search-box">
+                <div class="filter-group">
+                    <button class="filter-btn active" onclick="filterCirculars('all')">All</button>
+                    <button class="filter-btn" onclick="filterCirculars('army')">🎖️ Army</button>
+                    <button class="filter-btn" onclick="filterCirculars('navy')">⚓ Navy</button>
+                    <button class="filter-btn" onclick="filterCirculars('airforce')">✈️ Air Force</button>
+                </div>
+            </div>
+
+            <!-- Circulars Grid -->
+            <div class="circulars-grid">
+                <!-- Circular 1 -->
+                <div class="circular-card" data-category="army">
+                    <div class="circular-header">
+                        <div class="service-badge army-badge">🎖️ Army</div>
+                        <span class="posted-date">Posted: Jan 15, 2024</span>
+                    </div>
+                    <h3>NDA/CDS Officer Recruitment 2024</h3>
+                    <p class="circular-desc">Join Indian Army as an Officer. Notification for National Defence Academy (NDA) and Combined Defence Services (CDS) examination.</p>
+                    <div class="circular-details">
+                        <div class="detail-item">
+                            <span class="label">📋 Vacancies:</span>
+                            <span class="value">450</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📅 Last Date:</span>
+                            <span class="value">Feb 28, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📝 Qualification:</span>
+                            <span class="value">12th Pass / Bachelor</span>
+                        </div>
+                    </div>
+                    <a href="apply.html" class="btn btn-primary">Apply Now →</a>
+                </div>
+
+                <!-- Circular 2 -->
+                <div class="circular-card" data-category="navy">
+                    <div class="circular-header">
+                        <div class="service-badge navy-badge">⚓ Navy</div>
+                        <span class="posted-date">Posted: Jan 10, 2024</span>
+                    </div>
+                    <h3>Navy Officer Entry Scheme 2024</h3>
+                    <p class="circular-desc">Become a Navy Officer through Officer Entry Scheme. Eligible for engineering and non-engineering graduates.</p>
+                    <div class="circular-details">
+                        <div class="detail-item">
+                            <span class="label">📋 Vacancies:</span>
+                            <span class="value">280</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📅 Last Date:</span>
+                            <span class="value">Feb 15, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📝 Qualification:</span>
+                            <span class="value">Bachelor's Degree</span>
+                        </div>
+                    </div>
+                    <a href="apply.html" class="btn btn-primary">Apply Now →</a>
+                </div>
+
+                <!-- Circular 3 -->
+                <div class="circular-card" data-category="airforce">
+                    <div class="circular-header">
+                        <div class="service-badge airforce-badge">✈️ Air Force</div>
+                        <span class="posted-date">Posted: Jan 8, 2024</span>
+                    </div>
+                    <h3>Air Force Officer Selection 2024</h3>
+                    <p class="circular-desc">Join Indian Air Force as a pilot or ground duty officer. AFSB selection process includes written exam and interview.</p>
+                    <div class="circular-details">
+                        <div class="detail-item">
+                            <span class="label">📋 Vacancies:</span>
+                            <span class="value">320</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📅 Last Date:</span>
+                            <span class="value">Mar 10, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📝 Qualification:</span>
+                            <span class="value">12th Pass / Bachelor</span>
+                        </div>
+                    </div>
+                    <a href="apply.html" class="btn btn-primary">Apply Now →</a>
+                </div>
+
+                <!-- Circular 4 -->
+                <div class="circular-card" data-category="army">
+                    <div class="circular-header">
+                        <div class="service-badge army-badge">🎖️ Army</div>
+                        <span class="posted-date">Posted: Jan 5, 2024</span>
+                    </div>
+                    <h3>Army JAG Entry Recruitment</h3>
+                    <p class="circular-desc">Recruitment for Judge Advocate General (JAG) entry for law graduates into Indian Army.</p>
+                    <div class="circular-details">
+                        <div class="detail-item">
+                            <span class="label">📋 Vacancies:</span>
+                            <span class="value">50</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📅 Last Date:</span>
+                            <span class="value">Feb 5, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📝 Qualification:</span>
+                            <span class="value">Law Graduate</span>
+                        </div>
+                    </div>
+                    <a href="apply.html" class="btn btn-primary">Apply Now →</a>
+                </div>
+
+                <!-- Circular 5 -->
+                <div class="circular-card" data-category="navy">
+                    <div class="circular-header">
+                        <div class="service-badge navy-badge">⚓ Navy</div>
+                        <span class="posted-date">Posted: Jan 3, 2024</span>
+                    </div>
+                    <h3>Navy SSC Officer Recruitment</h3>
+                    <p class="circular-desc">Short Service Commission Officer recruitment for engineering and non-engineering graduates.</p>
+                    <div class="circular-details">
+                        <div class="detail-item">
+                            <span class="label">📋 Vacancies:</span>
+                            <span class="value">150</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📅 Last Date:</span>
+                            <span class="value">Feb 20, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📝 Qualification:</span>
+                            <span class="value">Bachelor's Degree</span>
+                        </div>
+                    </div>
+                    <a href="apply.html" class="btn btn-primary">Apply Now →</a>
+                </div>
+
+                <!-- Circular 6 -->
+                <div class="circular-card" data-category="airforce">
+                    <div class="circular-header">
+                        <div class="service-badge airforce-badge">✈️ Air Force</div>
+                        <span class="posted-date">Posted: Dec 28, 2023</span>
+                    </div>
+                    <h3>Air Force Pilot Recruitment</h3>
+                    <p class="circular-desc">Become an Air Force pilot. Selection through written exam, medical test, and flying aptitude tests.</p>
+                    <div class="circular-details">
+                        <div class="detail-item">
+                            <span class="label">📋 Vacancies:</span>
+                            <span class="value">180</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📅 Last Date:</span>
+                            <span class="value">Mar 5, 2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">📝 Qualification:</span>
+                            <span class="value">12th Pass (Physics, Maths)</span>
+                        </div>
+                    </div>
+                    <a href="apply.html" class="btn btn-primary">Apply Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>DefensePro</h4>
+                    <p>Your trusted partner in military career preparation</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="mock-test.html">Mock Tests</a></li>
+                        <li><a href="circular.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="ebooks.html">E-Books</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@defensepro.com</p>
+                    <p>Phone: +91 9876 543 210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DefensePro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .main-section {
+            padding: 60px 20px;
+            background: #f8fafc;
+        }
+
+        .search-filter {
+            margin-bottom: 50px;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--dark-color);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .circulars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
+        }
+
+        .circular-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .circular-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .circular-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .service-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .army-badge {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .navy-badge {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .airforce-badge {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .posted-date {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+
+        .circular-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .circular-desc {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .circular-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .detail-item .label {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 0.85rem;
+        }
+
+        .detail-item .value {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .circular-card .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .main-section {
+                padding: 40px 20px;
+            }
+
+            .circulars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-group {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+            }
+
+            .circular-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        function filterCirculars(category) {
+            const cards = document.querySelectorAll('.circular-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.3s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
