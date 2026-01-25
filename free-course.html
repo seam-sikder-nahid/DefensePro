@@ -660,7 +660,7 @@
                 }
 
                 if (field.name === 'phone') {
-                    if (!/^\d{10}$/.test(field.value)) {
+                    if (!/^\d{11}$/.test(field.value)) {
                         field.style.borderColor = '#dc2626';
                         isValid = false;
                     }
