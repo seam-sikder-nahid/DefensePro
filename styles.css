@@ -254,7 +254,7 @@ a:hover {
     margin-bottom: 30px;
     color: var(--gray-color);
 }
-
+/*
 .hero-image {
     flex: 1;
     display: flex;
@@ -268,6 +268,12 @@ a:hover {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: 20px;
     opacity: 0.1;
+}
+*/
+.hero-image .hero-shape {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* optional */
 }
 
 /* ============================================
