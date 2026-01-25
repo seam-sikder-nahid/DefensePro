@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - DefensePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-icon">🛡️</span>
+                    DefensePro
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link active">Courses</a></li>
+                <li class="nav-item"><a href="ebooks.html" class="nav-link">E-Books</a></li>
+                <li class="nav-item"><a href="circular.html" class="nav-link">Circulars</a></li>
+                <li class="nav-item"><a href="apply.html" class="nav-link">Apply</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="mock-test.html" class="nav-link">Mock Test</a></li>
+                <li class="nav-item"><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                <li class="nav-item"><a href="free-course.html" class="nav-link nav-link-cta">Free Course</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Courses</h1>
+            <p>Choose from our comprehensive defense preparation programs</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="courses-section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filter-group">
+                <button class="filter-btn active" onclick="filterCourses('all')">All Courses</button>
+                <button class="filter-btn" onclick="filterCourses('army')">Army Preparation</button>
+                <button class="filter-btn" onclick="filterCourses('navy')">Navy Preparation</button>
+                <button class="filter-btn" onclick="filterCourses('airforce')">Air Force Preparation</button>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card" data-category="army">
+                    <div class="course-header">
+                        <div class="course-badge">Army</div>
+                        <div class="course-icon">🎖️</div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Army Officer (NDA/CDS)</h3>
+                        <div class="course-meta">
+                            <span>📅 6 Months</span>
+                            <span>⭐ 4.8/5 (250+ reviews)</span>
+                        </div>
+                        <p>Complete preparation for NDA and CDS exams with mock tests and live sessions.</p>
+                        <div class="course-price">
+                            <span class="amount">₹4,999</span>
+                            <span class="original">₹7,999</span>
+                        </div>
+                        <a href="apply.html" class="btn btn-primary btn-block">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card" data-category="navy">
+                    <div class="course-header">
+                        <div class="course-badge">Navy</div>
+                        <div class="course-icon">⚓</div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Navy Officer Entry</h3>
+                        <div class="course-meta">
+                            <span>📅 5 Months</span>
+                            <span>⭐ 4.9/5 (180+ reviews)</span>
+                        </div>
+                        <p>Specialized course for Navy officer recruitment including SSB interview prep.</p>
+                        <div class="course-price">
+                            <span class="amount">₹4,499</span>
+                            <span class="original">₹7,499</span>
+                        </div>
+                        <a href="apply.html" class="btn btn-primary btn-block">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card" data-category="airforce">
+                    <div class="course-header">
+                        <div class="course-badge">Air Force</div>
+                        <div class="course-icon">✈️</div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Air Force Officer Selection</h3>
+                        <div class="course-meta">
+                            <span>📅 5 Months</span>
+                            <span>⭐ 4.7/5 (210+ reviews)</span>
+                        </div>
+                        <p>Complete guide for AFSB selection including PPDT and group discussions.</p>
+                        <div class="course-price">
+                            <span class="amount">₹4,299</span>
+                            <span class="original">₹7,299</span>
+                        </div>
+                        <a href="apply.html" class="btn btn-primary btn-block">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card" data-category="all">
+                    <div class="course-header">
+                        <div class="course-badge">Foundation</div>
+                        <div class="course-icon">📚</div>
+                    </div>
+                    <div class="course-body">
+                        <h3>General Knowledge Masterclass</h3>
+                        <div class="course-meta">
+                            <span>📅 3 Months</span>
+                            <span>⭐ 4.6/5 (320+ reviews)</span>
+                        </div>
+                        <p>Build strong fundamentals in GK, current affairs, and general studies.</p>
+                        <div class="course-price">
+                            <span class="amount">₹1,999</span>
+                            <span class="original">₹3,999</span>
+                        </div>
+                        <a href="apply.html" class="btn btn-primary btn-block">Enroll Now</a>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card" data-category="all">
+                    <div class="course-header">
+                        <div class="course-badge">Fitness</div>
+                        <div class="course-icon">💪</div>
+                    </div>
+                    <div class="course-body">
+                        <h3>Physical Fitness Training</h3>
+                        <div class="course-meta">
+                            <span>📅 Ongoing</span>
+                            <span>⭐ 4.9/5 (450+ reviews)</span>
+                        </div>
+                        <p>Expert-designed fitness regimen for defense recruitment standards.</p>
+                        <div class="course-price">
+                            <span class="amount">FREE</span>
+                        </div>
+                        <a href="apply.html" class="btn btn-secondary btn-block">Get Access</a>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="course-card" data-category="all">
+                    <div class="course-header">
+                        <div class="course-badge">Interview</div>
+                        <div class="course-icon">🎤</div>
+                    </div>
+                    <div class="course-body">
+                        <h3>SSB & Interview Preparation</h3>
+                        <div class="course-meta">
+                            <span>📅 2 Months</span>
+                            <span>⭐ 4.8/5 (280+ reviews)</span>
+                        </div>
+                        <p>Master the SSB interview process with expert guidance and mock sessions.</p>
+                        <div class="course-price">
+                            <span class="amount">₹2,999</span>
+                            <span class="original">₹4,999</span>
+                        </div>
+                        <a href="apply.html" class="btn btn-primary btn-block">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Courses -->
+    <section class="why-choose">
+        <div class="container">
+            <h2>Why Choose DefensePro Courses?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from defense experts and former officers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Learn Anywhere</h3>
+                    <p>Access courses on mobile, tablet, or desktop</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♾️</div>
+                    <h3>Lifetime Access</h3>
+                    <p>Get lifetime access to all course materials</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your learning with detailed analytics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>DefensePro</h4>
+                    <p>Your trusted partner in military career preparation</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="mock-test.html">Mock Tests</a></li>
+                        <li><a href="circular.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="ebooks.html">E-Books</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@defensepro.com</p>
+                    <p>Phone: +91 9876 543 210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DefensePro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function filterCourses(category) {
+            const cards = document.querySelectorAll('.course-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.3s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .courses-section {
+            padding: 80px 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--dark-color);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+        }
+
+        .course-header {
+            padding: 30px 25px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5ff);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .course-icon {
+            font-size: 2.5rem;
+        }
+
+        .course-body {
+            padding: 25px;
+        }
+
+        .course-body h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            margin-bottom: 15px;
+        }
+
+        .course-body p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+
+        .course-price {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .original {
+            text-decoration: line-through;
+            color: var(--gray-color);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .why-choose {
+            padding: 80px 20px;
+            background: #f8fafc;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-group {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</body>
+</html>
