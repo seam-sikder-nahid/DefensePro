@@ -145,9 +145,18 @@
                         </div>
                     </div>
 
+                    <!-- Wrong Answers Section -->
+                    <div class="wrong-answers-section" id="wrongAnswersSection" style="display:none;">
+                        <h3>Review Your Mistakes</h3>
+                        <div class="wrong-answers-list" id="wrongAnswersList"></div>
+                    </div>
+
                     <div class="results-feedback" id="feedback"></div>
 
-                    <button class="btn btn-primary btn-large" onclick="resetTest()">Take Another Test</button>
+                    <div class="results-actions">
+                        <button class="btn btn-primary btn-large" onclick="resetTest()">Take Another Test</button>
+                        <button class="btn btn-secondary btn-large" onclick="goToCourses()">Get Preparation</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +188,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
-                    <p>Email:seamsikdernahid@gmail.com</p>
+                    <p>Email: seamsikdernahid@gmail.com</p>
                     <p>Phone: +880 1307730121</p>
                 </div>
             </div>
@@ -382,6 +391,11 @@
             border-color: var(--primary-color);
         }
 
+        .option.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
         .test-navigation {
             display: flex;
             gap: 15px;
@@ -447,6 +461,63 @@
             font-weight: 600;
         }
 
+        .wrong-answers-section {
+            background: #fef2f2;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: left;
+            border-left: 4px solid #dc2626;
+        }
+
+        .wrong-answers-section h3 {
+            color: #dc2626;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .wrong-answers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .wrong-answer-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #fbbf24;
+        }
+
+        .wrong-answer-item .question {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+
+        .wrong-answer-item .your-answer {
+            margin-bottom: 8px;
+        }
+
+        .wrong-answer-item .your-answer .label {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .wrong-answer-item .correct-answer {
+            margin-bottom: 0;
+        }
+
+        .wrong-answer-item .correct-answer .label {
+            color: #16a34a;
+            font-weight: 600;
+        }
+
+        .answer-text {
+            color: var(--gray-color);
+            margin-left: 0;
+        }
+
         .results-feedback {
             background: #dbeafe;
             padding: 20px;
@@ -456,9 +527,18 @@
             font-size: 0.95rem;
         }
 
+        .results-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn-large {
             padding: 14px 40px;
             font-size: 1rem;
+            flex: 1;
+            min-width: 200px;
         }
 
         @media (max-width: 768px) {
@@ -499,175 +579,66 @@
             .results-stats {
                 grid-template-columns: 1fr;
             }
+
+            .results-actions {
+                flex-direction: column;
+            }
+
+            .btn-large {
+                min-width: auto;
+            }
         }
     </style>
 
     <script>
+        // IMPORTANT: This data structure is for demonstration only.
+        // FOR PRODUCTION: Questions must be fetched from a backend server!
+        // See implementation notes below the testData.
+        
         const testData = [
             {
-    title: 'General Knowledge Test - Bangladesh (In Bangla)',
-    questions: [
-        {
-            q: 'বাংলাদেশের রাজধানী কী?',
-            options: ['চট্টগ্রাম', 'ঢাকা', 'রাজশাহী', 'সিলেট'],
-            correct: 1
-        },
-        {
-            q: 'বাংলাদেশের মোট জেলা সংখ্যা কত?',
-            options: ['64', '65', '66', '67'],
-            correct: 0
-        },
-        {
-            q: 'বাংলাদেশের জাতীয় প্রাণী কোনটি?',
-            options: ['শিয়াল', 'বাঘ', 'হাতি', 'সিংহ'],
-            correct: 1
-        },
-        {
-            q: 'বাংলাদেশের সবচেয়ে বড় নদী কোনটি?',
-            options: ['গঙ্গা', 'যমুনা', 'মেঘনা', 'পদ্মা'],
-            correct: 3
-        },
-        {
-            q: 'বাংলাদেশের জাতীয় ফুল কোনটি?',
-            options: ['পদ্ম', 'চম্পা', 'গুলাব', 'জবা'],
-            correct: 0
-        },
-        {
-            q: 'বাংলাদেশের স্বাধীনতা কখন অর্জিত হয়?',
-            options: ['1970', '1971', '1972', '1973'],
-            correct: 1
-        },
-        {
-            q: 'বাংলাদেশের জাতীয় খেলা কোনটি?',
-            options: ['ক্রিকেট', 'ফুটবল', 'হকি', 'বাজার'],
-            correct: 2
-        },
-        {
-            q: 'বাংলাদেশের সবচেয়ে বড় জেলা কোনটি?',
-            options: ['চট্টগ্রাম', 'রাজশাহী', 'ঢাকা', 'বান্দরবান'],
-            correct: 0
-        },
-        {
-            q: 'বাংলাদেশের বর্তমান প্রধানমন্ত্রী কে?',
-            options: ['খালেদা জিয়া', 'শেখ হাসিনা', 'মওলানা বেগম', 'মির্জা ফখরুল'],
-            correct: 1
-        },
-        {
-            q: 'বাংলাদেশের মুদ্রার নাম কী?',
-            options: ['টাকা', 'ডলার', 'রুপি', 'পাউন্ড'],
-            correct: 0
-        }
-    ]
-},
+                title: 'General Knowledge Test - Bangladesh (In Bangla)',
+                questions: [
+                    { q: 'বাংলাদেশের রাজধানী কী?', options: ['চট্টগ্রাম', 'ঢাকা', 'রাজশাহী', 'সিলেট'], correct: 1 },
+                    { q: 'বাংলাদেশের মোট জেলা সংখ্যা কত?', options: ['64', '65', '66', '67'], correct: 0 },
+                    { q: 'বাংলাদেশের জাতীয় প্রাণী কোনটি?', options: ['শিয়াল', 'বাঘ', 'হাতি', 'সিংহ'], correct: 1 },
+                    { q: 'বাংলাদেশের সবচেয়ে বড় নদী কোনটি?', options: ['গঙ্গা', 'যমুনা', 'মেঘনা', 'পদ্মা'], correct: 3 },
+                    { q: 'বাংলাদেশের জাতীয় ফুল কোনটি?', options: ['পদ্ম', 'চম্পা', 'গুলাব', 'জবা'], correct: 0 },
+                    { q: 'বাংলাদেশের স্বাধীনতা কখন অর্জিত হয়?', options: ['1970', '1971', '1972', '1973'], correct: 1 },
+                    { q: 'বাংলাদেশের জাতীয় খেলা কোনটি?', options: ['ক্রিকেট', 'ফুটবল', 'হকি', 'বাজার'], correct: 2 },
+                    { q: 'বাংলাদেশের সবচেয়ে বড় জেলা কোনটি?', options: ['চট্টগ্রাম', 'রাজশাহী', 'ঢাকা', 'বান্দরবান'], correct: 0 },
+                    { q: 'বাংলাদেশের বর্তমান প্রধানমন্ত্রী কে?', options: ['খালেদা জিয়া', 'শেখ হাসিনা', 'মওলানা বেগম', 'মির্জা ফখরুল'], correct: 1 },
+                    { q: 'বাংলাদেশের মুদ্রার নাম কী?', options: ['টাকা', 'ডলার', 'রুপি', 'পাউন্ড'], correct: 0 }
+                ]
+            },
             {
                 title: 'Current Affairs Test',
                 questions: [
-                    {
-                        q: 'In which year did Bangladesh become a Republic?',
-                        options: ['1947', '1971', '1952', '1960'],
-                        correct: 1
-                    },
-                    {
-                        q: 'How many countries are in the UN Security Council permanent members?',
-                        options: ['3', '5', '7', '10'],
-                        correct: 1
-                    },
-                    {
-                        q: 'What is SAARC?',
-                        options: ['Sports Alliance', 'South Asian Association', 'Security Agreement', 'Strategic Alliance'],
-                        correct: 1
-                    },
-                    {
-                        q: 'Which country is the largest by area?',
-                        options: ['Canada', 'USA', 'China', 'Russia'],
-                        correct: 3
-                    },
-                    {
-                        q: 'What is the UNESCO World Heritage Site?',
-                        options: ['Cultural site', 'Natural site', 'Both A & B', 'Government building'],
-                        correct: 2
-                    },
-                    {
-                        q: 'How many members does BRICS have?',
-                        options: ['4', '5', '6', '7'],
-                        correct: 1
-                    },
-                    {
-                        q: 'Which organization gives Nobel Prize?',
-                        options: ['UN', 'WHO', 'Swedish Academy', 'World Bank'],
-                        correct: 2
-                    },
-                    {
-                        q: 'What is the headquarters of NATO?',
-                        options: ['Geneva', 'Brussels', 'Paris', 'Berlin'],
-                        correct: 1
-                    },
-                    {
-                        q: 'How many permanent members are in UN Security Council?',
-                        options: ['3', '5', '7', '15'],
-                        correct: 1
-                    },
-                    {
-                        q: 'What is the official language of the UN?',
-                        options: ['English', 'French', 'Both', 'Spanish'],
-                        correct: 2
-                    }
+                    { q: 'In which year did Bangladesh become a Republic?', options: ['1947', '1971', '1952', '1960'], correct: 1 },
+                    { q: 'How many countries are in the UN Security Council permanent members?', options: ['3', '5', '7', '10'], correct: 1 },
+                    { q: 'What is SAARC?', options: ['Sports Alliance', 'South Asian Association', 'Security Agreement', 'Strategic Alliance'], correct: 1 },
+                    { q: 'Which country is the largest by area?', options: ['Canada', 'USA', 'China', 'Russia'], correct: 3 },
+                    { q: 'What is the UNESCO World Heritage Site?', options: ['Cultural site', 'Natural site', 'Both A & B', 'Government building'], correct: 2 },
+                    { q: 'How many members does BRICS have?', options: ['4', '5', '6', '7'], correct: 1 },
+                    { q: 'Which organization gives Nobel Prize?', options: ['UN', 'WHO', 'Swedish Academy', 'World Bank'], correct: 2 },
+                    { q: 'What is the headquarters of NATO?', options: ['Geneva', 'Brussels', 'Paris', 'Berlin'], correct: 1 },
+                    { q: 'How many permanent members are in UN Security Council?', options: ['3', '5', '7', '15'], correct: 1 },
+                    { q: 'What is the official language of the UN?', options: ['English', 'French', 'Both', 'Spanish'], correct: 2 }
                 ]
             },
-        
             {
-    title: 'Bangladesh History Test',
-    questions: [
-        {
-            q: 'Who was the first President of Bangladesh?',
-            options: ['Sheikh Mujibur Rahman', 'Ziaur Rahman', 'Abdul Hamid', 'Shahabuddin Ahmed'],
-            correct: 0
-        },
-        {
-            q: 'In which year did Bangladesh gain independence?',
-            options: ['1970', '1971', '1972', '1973'],
-            correct: 1
-        },
-        {
-            q: 'What was the main objective of the Language Movement (Bhasha Andolon)?',
-            options: ['To make Urdu the state language', 'To make Bengali the state language', 'To gain independence', 'To promote English'],
-            correct: 1
-        },
-        {
-            q: 'Who is known as the Father of the Nation of Bangladesh?',
-            options: ['Ziaur Rahman', 'Sheikh Mujibur Rahman', 'Abdul Hamid', 'Kazi Nazrul Islam'],
-            correct: 1
-        },
-        {
-            q: 'Which historic event occurred on 26 March 1971?',
-            options: ['Formation of Awami League', 'Declaration of Bangladesh independence', 'Bangladesh Liberation War ended', 'Language Movement started'],
-            correct: 1
-        },
-        {
-            q: 'Who was the leader of Bangladesh during the Liberation War in 1971?',
-            options: ['Sheikh Mujibur Rahman', 'Ziaur Rahman', 'Tajuddin Ahmad', 'Abdul Hamid'],
-            correct: 2
-        },
-        {
-            q: 'When did the Bangladesh Liberation War end?',
-            options: ['16 December 1971', '26 March 1971', '21 February 1952', '10 April 1972'],
-            correct: 0
-        },
-        {
-            q: 'Who founded the Bangladesh Nationalist Party (BNP)?',
-            options: ['Sheikh Hasina', 'Ziaur Rahman', 'Hussain Muhammad Ershad', 'Abdul Hamid'],
-            correct: 1
-        },
-        {
-            q: 'What was the main goal of the 1952 Language Movement?',
-            options: ['To promote English', 'To make Urdu the state language', 'To make Bengali the state language', 'To support independence movement'],
-            correct: 2
-        },
-        {
-            q: 'Who became the first female Prime Minister of Bangladesh?',
-            options: ['Sheikh Hasina', 'Khaleda Zia', 'Taslima Nasrin', 'Begum Rokeya'],
-            correct: 1
-        }
+                title: 'Bangladesh History Test',
+                questions: [
+                    { q: 'Who was the first President of Bangladesh?', options: ['Sheikh Mujibur Rahman', 'Ziaur Rahman', 'Abdul Hamid', 'Shahabuddin Ahmed'], correct: 0 },
+                    { q: 'In which year did Bangladesh gain independence?', options: ['1970', '1971', '1972', '1973'], correct: 1 },
+                    { q: 'What was the main objective of the Language Movement (Bhasha Andolon)?', options: ['To make Urdu the state language', 'To make Bengali the state language', 'To gain independence', 'To promote English'], correct: 1 },
+                    { q: 'Who is known as the Father of the Nation of Bangladesh?', options: ['Ziaur Rahman', 'Sheikh Mujibur Rahman', 'Abdul Hamid', 'Kazi Nazrul Islam'], correct: 1 },
+                    { q: 'Which historic event occurred on 26 March 1971?', options: ['Formation of Awami League', 'Declaration of Bangladesh independence', 'Bangladesh Liberation War ended', 'Language Movement started'], correct: 1 },
+                    { q: 'Who was the leader of Bangladesh during the Liberation War in 1971?', options: ['Sheikh Mujibur Rahman', 'Ziaur Rahman', 'Tajuddin Ahmad', 'Abdul Hamid'], correct: 2 },
+                    { q: 'When did the Bangladesh Liberation War end?', options: ['16 December 1971', '26 March 1971', '21 February 1952', '10 April 1972'], correct: 0 },
+                    { q: 'Who founded the Bangladesh Nationalist Party (BNP)?', options: ['Sheikh Hasina', 'Ziaur Rahman', 'Hussain Muhammad Ershad', 'Abdul Hamid'], correct: 1 },
+                    { q: 'What was the main goal of the 1952 Language Movement?', options: ['To promote English', 'To make Urdu the state language', 'To make Bengali the state language', 'To support independence movement'], correct: 2 },
+                    { q: 'Who became the first female Prime Minister of Bangladesh?', options: ['Sheikh Hasina', 'Khaleda Zia', 'Taslima Nasrin', 'Begum Rokeya'], correct: 1 }
                 ]
             }
         ];
@@ -675,6 +646,7 @@
         let currentTestIndex = -1;
         let currentQuestionIndex = 0;
         let userAnswers = [];
+        let hasAnswered = false;
         let timeRemaining = 0;
         let timerInterval = null;
 
@@ -696,6 +668,8 @@
         }
 
         function displayQuestion() {
+            hasAnswered = userAnswers[currentQuestionIndex] !== -1;
+            
             const q = testData[currentTestIndex].questions[currentQuestionIndex];
             document.getElementById('questionText').textContent = q.q;
             document.getElementById('currentQ').textContent = currentQuestionIndex + 1;
@@ -713,9 +687,10 @@
                 `;
             });
 
-            document.getElementById('prevBtn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
-            document.getElementById('nextBtn').style.display = currentQuestionIndex < testData[currentTestIndex].questions.length - 1 ? 'inline-block' : 'none';
-            document.getElementById('submitBtn').style.display = currentQuestionIndex === testData[currentTestIndex].questions.length - 1 ? 'inline-block' : 'none';
+            // Hide Previous button after answer is selected
+            document.getElementById('prevBtn').style.display = (currentQuestionIndex > 0 && !hasAnswered) ? 'inline-block' : 'none';
+            document.getElementById('nextBtn').style.display = (currentQuestionIndex < testData[currentTestIndex].questions.length - 1 && hasAnswered) ? 'inline-block' : 'none';
+            document.getElementById('submitBtn').style.display = (currentQuestionIndex === testData[currentTestIndex].questions.length - 1 && hasAnswered) ? 'inline-block' : 'none';
 
             updateProgressBar();
         }
@@ -729,6 +704,12 @@
                     opt.classList.remove('selected');
                 }
             });
+            
+            // Update button visibility after answer selection
+            hasAnswered = true;
+            document.getElementById('prevBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = (currentQuestionIndex < testData[currentTestIndex].questions.length - 1) ? 'inline-block' : 'none';
+            document.getElementById('submitBtn').style.display = (currentQuestionIndex === testData[currentTestIndex].questions.length - 1) ? 'inline-block' : 'none';
         }
 
         function nextQuestion() {
@@ -740,7 +721,7 @@
         }
 
         function previousQuestion() {
-            if (currentQuestionIndex > 0) {
+            if (currentQuestionIndex > 0 && !hasAnswered) {
                 currentQuestionIndex--;
                 displayQuestion();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -770,9 +751,18 @@
             clearInterval(timerInterval);
 
             let correct = 0;
+            const wrongAnswerDetails = [];
+
             testData[currentTestIndex].questions.forEach((q, i) => {
                 if (userAnswers[i] === q.correct) {
                     correct++;
+                } else if (userAnswers[i] !== -1) {
+                    wrongAnswerDetails.push({
+                        questionNumber: i + 1,
+                        question: q.q,
+                        userAnswer: q.options[userAnswers[i]],
+                        correctAnswer: q.options[q.correct]
+                    });
                 }
             });
 
@@ -800,7 +790,38 @@
             document.getElementById('scoreMessage').textContent = message;
             document.getElementById('feedback').textContent = `You answered ${correct} out of ${total} questions correctly.`;
 
+            // Display wrong answers
+            if (wrongAnswerDetails.length > 0) {
+                const wrongAnswersSection = document.getElementById('wrongAnswersSection');
+                const wrongAnswersList = document.getElementById('wrongAnswersList');
+                
+                wrongAnswersList.innerHTML = '';
+                wrongAnswerDetails.forEach(item => {
+                    const wrongAnswerHTML = `
+                        <div class="wrong-answer-item">
+                            <div class="question">Q${item.questionNumber}: ${item.question}</div>
+                            <div class="your-answer">
+                                <span class="label">Your Answer:</span>
+                                <span class="answer-text">${item.userAnswer}</span>
+                            </div>
+                            <div class="correct-answer">
+                                <span class="label">✓ Correct Answer:</span>
+                                <span class="answer-text">${item.correctAnswer}</span>
+                            </div>
+                        </div>
+                    `;
+                    wrongAnswersList.innerHTML += wrongAnswerHTML;
+                });
+                
+                wrongAnswersSection.style.display = 'block';
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToCourses() {
+            // Update this URL to your courses page
+            window.location.href = 'courses.html';
         }
 
         function resetTest() {
@@ -808,6 +829,7 @@
             currentQuestionIndex = 0;
             userAnswers = [];
             timeRemaining = 0;
+            hasAnswered = false;
 
             document.getElementById('testSelection').style.display = 'block';
             document.getElementById('testInterface').style.display = 'none';
@@ -821,5 +843,79 @@
             document.getElementById('progressFill').style.width = progress + '%';
         }
     </script>
-</body>
-</html>
+    
+    <!-- 
+    =====================================================
+    SECURITY IMPLEMENTATION NOTES - READ CAREFULLY
+    =====================================================
+    
+    CURRENT PROBLEM:
+    Questions and correct answers are visible in page source code because they're
+    hardcoded in the frontend JavaScript. This is a security vulnerability.
+    
+    SOLUTION - MOVE QUESTIONS TO BACKEND:
+    
+    1. Create a backend API (Node.js, Python, PHP, etc.)
+    2. Only send one question at a time (never all questions)
+    3. Store correct answers on the backend ONLY
+    4. Verify answers server-side, not client-side
+    
+    BACKEND ENDPOINT EXAMPLES:
+    
+    // GET /api/mock-test/question?testId=0&questionNumber=1
+    Response:
+    {
+        questionId: "q_1",
+        question: "বাংলাদেশের রাজধানী কী?",
+        options: ["চট্টগ্রাম", "ঢাকা", "রাজশাহী", "সিলেট"]
+        // NO correct answer!
+    }
+    
+    // POST /api/mock-test/verify-answer
+    Request:
+    {
+        testId: 0,
+        questionId: "q_1",
+        userAnswer: 1,
+        sessionId: "user_session_123"
+    }
+    
+    Response:
+    {
+        isCorrect: true,
+        explanation: "ঢাকা হল বাংলাদেশের রাজধানী"
+    }
+    
+    FRONTEND MODIFICATION:
+    
+    async function loadQuestion(testId, questionNumber) {
+        const response = await fetch('/api/mock-test/question', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ testId, questionNumber })
+        });
+        return await response.json();
+    }
+    
+    async function submitAnswer(testId, questionId, selectedOption) {
+        const response = await fetch('/api/mock-test/verify-answer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                testId,
+                questionId,
+                userAnswer: selectedOption,
+                sessionId: getCurrentSessionId()
+            })
+        });
+        return await response.json();
+    }
+    
+    BENEFITS:
+    ✓ Questions hidden from source code
+    ✓ Correct answers never exposed to client
+    ✓ Prevents cheating by modifying localStorage
+    ✓ Server tracks each user session
+    ✓ Answer verification happens server-side (secure)
+    =====================================================
+    -->
