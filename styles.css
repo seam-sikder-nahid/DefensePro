@@ -682,22 +682,22 @@ a:hover {
     .hero-content p {
         font-size: 1rem;
     }
-
+}
 
    /* ===============================
    DESKTOP NAVBAR FIX (Laptop)
-   =============================== */
+   =============================== 
 @media (min-width: 1024px) {
     .nav-menu {
         display: flex;
         align-items: center;
-        flex-wrap: nowrap;     /*  prevent breaking */
-        gap: 10px;             /* controlled spacing */
+        flex-wrap: nowrap;     //  prevent breaking /
+        gap: 10px;             / controlled spacing /
     }
 
     .nav-link {
-        padding: 8px 10px;     /* slightly tighter */
-        white-space: nowrap;   /* text break off */
+        padding: 8px 10px;     / slightly tighter /
+        white-space: nowrap;   / text break off /
     }
 
     .nav-link-cta {
@@ -705,6 +705,31 @@ a:hover {
         font-size: 0.9rem;
         white-space: nowrap;
     }
+} 
+
+} */
+
+/* ===== DESKTOP NAVBAR FIX ===== */
+.nav-menu {
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Slightly compact desktop spacing */
+@media (min-width: 1024px) {
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .nav-link-cta {
+        padding: 7px 14px;
+        font-size: 0.88rem;
+    }
 }
