@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup - DefensePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-icon">🛡️</span>
+                    DefensePro
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="ebooks.html" class="nav-link">E-Books</a></li>
+                <li class="nav-item"><a href="circular.html" class="nav-link">Circulars</a></li>
+                <li class="nav-item"><a href="apply.html" class="nav-link">Apply</a></li>
+                <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="mock-test.html" class="nav-link">Mock Test</a></li>
+                <li class="nav-item"><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                <li class="nav-item"><a href="free-course.html" class="nav-link nav-link-cta">Free Course</a></li>
+                <li class="nav-item"><a href="auth.html" class="nav-link nav-link-cta">Login/Signup</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="auth-container">
+        <div class="auth-wrapper">
+            <!-- Login Form -->
+            <div class="auth-form active" id="loginForm">
+                <h1>Welcome Back</h1>
+                <p class="auth-subtitle">Login to your account</p>
+
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address *</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password *</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+
+                <p class="auth-switch">
+                    Don't have an account? <a href="#" onclick="switchForm(event)">Sign up here</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form" id="signupForm">
+                <h1>Create Account</h1>
+                <p class="auth-subtitle">Join DefensePro today</p>
+
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="signupName">Full Name *</label>
+                            <input type="text" id="signupName" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number *</label>
+                            <input type="tel" id="signupPhone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address *</label>
+                        <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="signupPassword">Password *</label>
+                            <input type="password" id="signupPassword" placeholder="Create a password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupConfirm">Confirm Password *</label>
+                            <input type="password" id="signupConfirm" placeholder="Confirm password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupService">Service Interest *</label>
+                        <select id="signupService" required>
+                            <option value="">Select a service</option>
+                            <option value="army">Indian Army</option>
+                            <option value="navy">Indian Navy</option>
+                            <option value="airforce">Indian Air Force</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+
+                <p class="auth-switch">
+                    Already have an account? <a href="#" onclick="switchForm(event)">Login here</a>
+                </p>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <h3>✅ Success!</h3>
+                <p id="successText"></p>
+                <p style="margin-top: 15px; color: var(--gray-color); font-size: 0.9rem;">Redirecting to home page...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>DefensePro</h4>
+                    <p>Your trusted partner in military career preparation</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="mock-test.html">Mock Tests</a></li>
+                        <li><a href="circular.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="ebooks.html">E-Books</a></li>
+                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@defensepro.com</p>
+                    <p>Phone: +91 9876 543 210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DefensePro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        .auth-container {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5ff 100%);
+            min-height: calc(100vh - 300px);
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            position: relative;
+            min-height: 500px;
+        }
+
+        .auth-form {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-form h1 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .auth-subtitle {
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .btn-full {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .auth-switch {
+            text-align: center;
+            color: var(--gray-color);
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .auth-switch a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .auth-switch a:hover {
+            color: var(--secondary-color);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            color: var(--gray-color);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            .auth-wrapper {
+                padding: 25px;
+                min-height: auto;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-form h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Switch between login and signup
+        function switchForm(event) {
+            event.preventDefault();
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            loginForm.classList.toggle('active');
+            signupForm.classList.toggle('active');
+        }
+
+        // Handle Login
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Send to backend
+            fetch('http://localhost:5000/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.token) {
+                    // Save token
+                    localStorage.setItem('authToken', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+
+                    // Show success
+                    showSuccess('Login successful! Redirecting...');
+                    setTimeout(() => window.location.href = 'index.html', 2000);
+                } else {
+                    alert('Error: ' + (data.message || 'Login failed'));
+                }
+            })
+            .catch(err => alert('Error: ' + err.message));
+        }
+
+        // Handle Signup
+        function handleSignup(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const phone = document.getElementById('signupPhone').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirm').value;
+            const service = document.getElementById('signupService').value;
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Send to backend
+            fetch('http://localhost:5000/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, phone, password, service })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.token) {
+                    // Save token
+                    localStorage.setItem('authToken', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+
+                    // Show success
+                    showSuccess('Account created! Redirecting...');
+                    setTimeout(() => window.location.href = 'index.html', 2000);
+                } else {
+                    alert('Error: ' + (data.message || 'Signup failed'));
+                }
+            })
+            .catch(err => alert('Error: ' + err.message));
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            document.getElementById('successText').textContent = message;
+            document.getElementById('successMessage').classList.add('show');
+            document.getElementById('loginForm').classList.remove('active');
+            document.getElementById('signupForm').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
