@@ -114,7 +114,7 @@
                 </div>
 
                 <div class="test-navigation">
-                  <!--  <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display:none;">← Previous</button> -->
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display:none;">← Previous</button> 
                     <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next →</button>
                     <button class="btn btn-primary" id="submitBtn" onclick="submitTest()" style="display:none;">Submit Test</button>
                 </div>
@@ -688,7 +688,8 @@
             });
 
             // Hide Previous button after answer is selected
-            document.getElementById('prevBtn').style.display = (currentQuestionIndex > 0 && !hasAnswered) ? 'inline-block' : 'none';
+            document.getElementById('prevBtn').style.display = 'none';
+           // document.getElementById('prevBtn').style.display = (currentQuestionIndex > 0 && !hasAnswered) ? 'inline-block' : 'none';
             document.getElementById('nextBtn').style.display = (currentQuestionIndex < testData[currentTestIndex].questions.length - 1 && hasAnswered) ? 'inline-block' : 'none';
             document.getElementById('submitBtn').style.display = (currentQuestionIndex === testData[currentTestIndex].questions.length - 1 && hasAnswered) ? 'inline-block' : 'none';
 
@@ -724,7 +725,7 @@
             if (currentQuestionIndex > 0 && !hasAnswered) {
                 currentQuestionIndex--;
                 displayQuestion();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+              //  window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
