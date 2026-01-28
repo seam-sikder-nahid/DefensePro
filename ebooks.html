@@ -55,12 +55,64 @@
                     <button class="filter-btn" onclick="filterBooks('current')">Current Affairs</button>
                     <button class="filter-btn" onclick="filterBooks('history')">History</button>
                     <button class="filter-btn" onclick="filterBooks('science')">Science</button>
+                    <button class="filter-btn" onclick="filterBooks('medical')">Medical</button>
+                    <button class="filter-btn" onclick="filterBooks('viva')">Viva</button>
                 </div>
             </div>
 
             <!-- E-Books Grid -->
             <div class="ebooks-grid">
                 <!-- Book 1 -->
+<div class="ebook-card" data-category="medical">
+    <div class="ebook-icon">🩺</div>
+    <h3>সশস্ত্র বাহিনীর মেডিকেল গাইড</h3>
+    <p class="category-badge">Medical</p>
+    <p class="ebook-desc">
+        হাত, পা, ফ্ল্যাট ফিট, ভেরিকস ভেইন, স্কিন, নাক ও পাইলস সংক্রান্ত
+        সামরিক মেডিকেল পরীক্ষার পূর্ণাঙ্গ নির্দেশিকা।
+    </p>
+    <div class="ebook-meta">
+        <span>📄 PDF</span>
+        <span>📊 মেডিকেল স্ট্যান্ডার্ড</span>
+    </div>
+    <a href="ebooks/medical-guide.pdf" class="btn btn-primary" download>
+        Download Now
+    </a>
+</div>
+
+<!-- Book 2 -->
+<div class="ebook-card" data-category="medical">
+    <div class="ebook-icon">🪖</div>
+    <h3>সৈনিক পদের মেডিকেল টেস্ট – সম্পূর্ণ গাইড</h3>
+    <p class="category-badge">Medical</p>
+    <p class="ebook-desc">
+        সশস্ত্র বাহিনীর সৈনিক পদে নিয়োগের জন্য প্রয়োজনীয় সকল মেডিকেল টেস্ট,
+        যোগ্যতা ও বাতিলের কারণ বিস্তারিতভাবে ব্যাখ্যা করা হয়েছে।
+    </p>
+    <div class="ebook-meta">
+        <span>📄 PDF</span>
+        <span>📊 Recruitment Guide</span>
+    </div>
+    <a href="ebooks/soldier-medical-test.pdf" class="btn btn-primary" download>
+        Download Now
+    </a>
+</div>
+
+<!-- Book 3 -->
+                <div class="ebook-card" data-category="viva">
+                        <div class="ebook-icon">🎤</div>
+                        <h3>সশস্ত্র বাহিনীর মৌখিক পরীক্ষা (ভাইভা) প্রস্তুতি গাইড</h3>
+                        <p class="category-badge">Viva</p>
+                        <p class="ebook-desc">
+                   ভাইভায় কী প্রশ্ন আসে, কীভাবে উত্তর দিতে হয়,আত্মবিশ্বাস ও বডি ল্যাঙ্গুয়েজ – সবকিছু নিয়ে সম্পূর্ণ গাইড।
+                        </p>
+                        <div class="ebook-meta">
+                            <span>📄 PDF</span>
+                        <span>📊 Interview Prep</span>
+                    </div>
+                    <a href="ebooks/viva-guide.pdf" class="btn btn-primary" download>Download Now</a>
+                </div>
+                <!-- Book 4 -->
                 <div class="ebook-card" data-category="gk">
                     <div class="ebook-icon">📚</div>
                     <h3>General Knowledge Handbook</h3>
@@ -73,7 +125,7 @@
                     <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
                 </div>
 
-                <!-- Book 2 -->
+                <!-- Book 5 -->
                 <div class="ebook-card" data-category="current">
                     <div class="ebook-icon">📰</div>
                     <h3>Current Affairs 2026</h3>
@@ -86,7 +138,7 @@
                     <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
                 </div>
 
-                <!-- Book 3 -->
+                <!-- Book 6 -->
                 <div class="ebook-card" data-category="history">
                     <div class="ebook-icon">🏛️</div>
                     <h3>Bangladeshi History Guide</h3>
@@ -99,7 +151,7 @@
                     <a href="#" class="btn btn-primary" onclick="handleDownload(event)">Download Now</a>
                 </div>
 
-                <!-- Book 4 -->
+                <!-- Book 7 -->
                 <div class="ebook-card" data-category="gk">
                     <div class="ebook-icon">🌍</div>
                     <h3>World Geography Notes</h3>
