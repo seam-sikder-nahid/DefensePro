@@ -63,7 +63,26 @@
             <button class="btn btn-primary btn-block">পরীক্ষা শুরু করুন</button>
         </div>
 
-                    <div class="test-card" onclick="startTest(1)">
+                    <div class="test-selection" id="testSelection">
+    <h2>Select a Test</h2>
+    <div class="tests-grid">
+        <div class="test-card" onclick="startTest(1)">
+            <div class="test-header">
+                <h3>সাধারণ গণিত</h3>
+                <span class="difficulty">সহজ-মধ্যম</span>
+            </div>
+            <div class="test-info">
+                <p>📝 <strong>১০টি প্রশ্ন</strong></p>
+                <p>⏱️ <strong>১৫ মিনিট</strong></p>
+                <p>বিষয়: সাধারণ গণিত, অংক, ঘনক, বর্গক্ষেত্র, ত্রিভুজ, গাণিতিক ধারা</p>
+            </div>
+            <button class="btn btn-primary btn-block">পরীক্ষা শুরু করুন</button>
+        </div>
+    </div>
+</div>
+
+
+                    <div class="test-card" onclick="startTest(2)">
                         <div class="test-header">
                             <h3>General Knowledge Test</h3>
                             <span class="difficulty">Easy</span>
@@ -76,7 +95,7 @@
                         <button class="btn btn-primary btn-block">Start Test</button>
                     </div>
 
-                    <div class="test-card" onclick="startTest(2)">
+                    <div class="test-card" onclick="startTest(3)">
                         <div class="test-header">
                             <h3>Current Affairs Test</h3>
                             <span class="difficulty">Medium</span>
@@ -89,7 +108,7 @@
                         <button class="btn btn-primary btn-block">Start Test</button>
                     </div>
 
-                    <div class="test-card" onclick="startTest(3)">
+                    <div class="test-card" onclick="startTest(4)">
                         <div class="test-header">
                             <h3>Bangladesh History Test</h3>
                             <span class="difficulty">Medium</span>
@@ -745,6 +764,23 @@
         }
     ]
 },
+
+        {
+    title: 'সাধারণ গণিত',
+    questions: [
+        { q: '1. যদি (3m + 4m)/m = 7 হয়, তবে m এর মান কত?', options: ['1', '7', '0', 'যেকোনো সংখ্যা'], correct: 3 },
+        { q: '2. যদি x² - x = x - 1 হয়, তবে x এর মান কত?', options: ['1', '0', '2', '3'], correct: 0 },
+        { q: '3. কোনো ঘনকের ধার ৪ মিটার হলে, ঘনকের আয়তন কত?', options: ['16', '64', '32', '8'], correct: 1 },
+        { q: '4. কোনো পরিবাহীর ব্যাসার্ধ 1/2 হলে, পরিবাহীর ক্ষেত্রফল কত?', options: ['π/2', 'π/4', 'π', '1'], correct: 1 },
+        { q: '5. কোনো গোলকের ব্যাস ৬ সেমি হলে, গোলকের আয়তন কত?', options: ['36π', '72π', '54π', '108π'], correct: 0 },
+        { q: '6. ২, ৪, ৬, ৮ সংখ্যাগুলোর ঘর মান কত?', options: ['4', '5', '6', '7'], correct: 1 },
+        { q: '7. একটি বর্গক্ষেত্রের বাহুর দৈর্ঘ্য ২ মিটার হলে, এর কর্ণের দৈর্ঘ্য কত?', options: ['2√2', '4', '√2', '2'], correct: 0 },
+        { q: '8. যদি tan θ = 4/3 হয়, তবে cos θ কত?', options: ['3/5', '4/5', '5/4', '5/3'], correct: 0 },
+        { q: '9. দুটি সংখ্যার অনুপাত ৫:৭ এবং এদের গ.সা.গু ৪ হলে, সংখ্যা দুটির ল.সা.গু কত?', options: ['140', '35', '28', '20'], correct: 0 },
+        { q: '10. একটি ত্রিভুজের পরিসীমা ৪৫ সেমি এবং বাহুগুলোর অনুপাত ৩:৫:৭ হলে, বৃহত্তম বাহুর মান কত?', options: ['21', '15', '12', '25'], correct: 0 }
+    ]
+}
+
 
             {
                 title: 'General Knowledge Test - Bangladesh (In Bangla)',
